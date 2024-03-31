@@ -10,7 +10,6 @@ import {
 } from '@solana/wallet-adapter-wallets';
 import { Program, AnchorProvider, web3, BN } from '@project-serum/anchor';
 import {
-    clusterApiUrl,
     Connection,
     PublicKey,
     SystemProgram,
@@ -21,7 +20,6 @@ import React, { FC, ReactNode, useMemo, useState } from 'react';
 import * as buffer from 'buffer';
 
 (window as any).Buffer = buffer.Buffer;
-// console.log(idl);
 
 require('./App.css');
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -39,9 +37,6 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
     const network = WalletAdapterNetwork.Mainnet;
 
-    // You can also provide a custom RPC endpoint.
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-
     // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
     // Only the wallets you configure here will be compiled into your application, and only the dependencies
     // of wallets that your users connect to will be loaded.
@@ -57,7 +52,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
     );
 
     return (
-        <ConnectionProvider endpoint={endpoint}>
+        <ConnectionProvider endpoint={'https://solana-mainnet.g.alchemy.com/v2/w7zDF5_9xIudjHG9L5rI502O9JbyK8TK'}>
             <WalletProvider wallets={wallets} autoConnect>
                 <WalletModalProvider>{children}</WalletModalProvider>
             </WalletProvider>
@@ -75,10 +70,7 @@ const Content: FC = () => {
         if (!wallet) {
             return null;
         }
-
-        // const network = "http://127.0.0.1:8899";
-        const connection = new Connection(web3.clusterApiUrl(clusterAPI), 'confirmed');
-
+        const connection = new Connection(clusterAPI, 'confirmed');
         const provider = new AnchorProvider(connection, wallet, {
             preflightCommitment: 'confirmed',
         });
@@ -96,7 +88,7 @@ const Content: FC = () => {
         if (!provider) {
             return null;
         }
-        const connection = new Connection(web3.clusterApiUrl(clusterAPI), 'confirmed');
+        const connection = new Connection(clusterAPI, 'confirmed');
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: wallet.publicKey,
