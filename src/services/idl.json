@@ -1,0 +1,232 @@
+{
+    "version": "0.1.0",
+    "name": "spl_claim_contract",
+    "instructions": [
+        {
+            "name": "initialize",
+            "accounts": [
+                {
+                    "name": "userList",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "listAta",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "mint",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "global",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "owner",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "updateUsers",
+            "accounts": [
+                {
+                    "name": "userList",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "global",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "owner",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": [
+                {
+                    "name": "amounts",
+                    "type": {
+                        "vec": "u64"
+                    }
+                },
+                {
+                    "name": "users",
+                    "type": {
+                        "vec": "publicKey"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "checkEligibility",
+            "accounts": [
+                {
+                    "name": "userList",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "user",
+                    "isMut": true,
+                    "isSigner": true
+                }
+            ],
+            "args": []
+        },
+        {
+            "name": "claimToken",
+            "accounts": [
+                {
+                    "name": "userList",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "global",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "user",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "mint",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userAta",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "listAta",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "associatedTokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "bump",
+                    "type": "u8"
+                },
+                {
+                    "name": "index",
+                    "type": "u64"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "Global",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "claimableTokens",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "claimedTokens",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "totalUsers",
+                        "type": "u64"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "User",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "user",
+                        "type": {
+                            "array": [
+                                "publicKey",
+                                50
+                            ]
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "type": {
+                            "array": [
+                                "u64",
+                                50
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "errors": [
+        {
+            "code": 6000,
+            "name": "NotEligible",
+            "msg": "you are not eligible!"
+        },
+        {
+            "code": 6001,
+            "name": "NotAuthorized",
+            "msg": "you are not authorized to this !"
+        },
+        {
+            "code": 6002,
+            "name": "InvalidInput",
+            "msg": "Invalid input!"
+        },
+        {
+            "code": 6003,
+            "name": "InvalidIndex",
+            "msg": "Invalid index!"
+        }
+    ]
+}

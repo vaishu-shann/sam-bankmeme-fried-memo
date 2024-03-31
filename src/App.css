@@ -1,0 +1,361 @@
+.App {
+    min-height: 100vh;
+    background-color: #f1e9da;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+.header-logo {
+    width: auto;
+    height: 70px;
+}
+.hero-section {
+    max-width: 1200px;
+    width: 100%;
+    margin: 10px auto 10px;
+    padding: 10px;
+}
+
+.floating {
+    margin: 20px auto;
+    display: block;
+    width: 325px;
+    border-radius: 4px;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 15px);
+    }
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+.nav-flex {
+    display: flex;
+    align-items: center;
+}
+.nav-link {
+    padding-right: 30px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+.Heading {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.hero-desc {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    margin: 50px auto 20px;
+    width: 65%;
+    line-height: 30px;
+}
+.wallet-adapter-button-trigger {
+    background-color: rgb(0, 204, 150) !important;
+
+}
+.eligibility-cta {
+    margin: auto;
+    width: fit-content;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    padding: 15px 15px;
+    border-radius: 4px;
+    background-color: rgb(209, 114, 37);
+    text-align: center;
+    cursor: pointer;
+}
+.marquee-section {
+    color: rgb(209, 114, 37);
+    font-size: 100px;
+    padding: 50px 0;
+    opacity: 0.5;
+}
+.community-section {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 20px 10px 40px;
+}
+.com-head {
+    color: #000 !important;
+    font-weight: 600;
+    font-size: 42px;
+    text-align: center;
+}
+.social-links {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.ms-sec {
+    max-width: 1000px;
+    margin: 50px auto 50px;
+    padding-top: 40px;
+    background-color: #e6dbca;
+    border-radius: 20px;
+    padding-bottom: 40px;
+}
+.tkn-sec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.tkn-addr {
+    width: 940px;
+    padding: 0 30px;
+}
+.editor .editorLineNumber{
+    color:#0000008f !important;
+}
+.defla-sec {
+}
+.tkn-field {
+    /* display: flex;
+    align-items: center;
+    border: 2px solid rgba(152, 161, 192, 0.24);
+    background: transparent;
+    border-radius: 8px;
+    line-height: 1.5rem;    
+    padding: 10px 12px;
+    font-size: 1rem;
+    outline-style: none;
+    color: #fff; */
+}
+textarea {
+    width: 95%;
+    background: url(http://i.imgur.com/2cOaJ.png);
+    background-attachment: local;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+    padding-top: 10px;
+    border-color: rgba(152, 161, 192, 0.24);
+    color: #fff;
+}
+.editor {
+    counter-reset: line;
+    border: 1px solid rgb(102 88 80 / 52%);
+    color: #000;
+    border-radius: 4px !important;
+}
+
+.editor #codeArea {
+    outline: none;
+    padding-left: 60px !important;
+}
+
+.editor pre {
+    padding-left: 60px !important;
+}
+
+.editor .editorLineNumber {
+    position: absolute;
+    left: 0px;
+    color: #cccccc;
+    text-align: right;
+    width: 40px;
+    font-weight: 100;
+}
+.csv-button {
+    background-color: rgb(209, 114, 37);
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    float: right;
+    margin-right: 9px;
+}
+.csv-opac {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    width: 84px;
+    margin-left: -81px;
+}
+.token-input-ms {
+    width: 97%;
+    border: 1px solid rgb(102 88 80 / 52%);
+    background: transparent;
+    border-radius: 4px;
+    line-height: 1.5rem;
+    padding: 10px 12px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    outline-style: none;
+    color: #000000b3;
+}
+.dot-gif {
+    width: 70px;
+    height: 50px;
+    margin-left: 15px;
+}
+.deploy-cta-gray{
+
+}
+.deploy-cta {
+    padding: 15px 25px;
+    background-color: rgb(0, 204, 150) !important;
+    color: #000 !important;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display: block;
+    margin: 50px auto 0;
+}
+.contract-section{
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+    /* background-color: #e6dbca; */
+    border-radius: 25px;
+    padding:60px 0px 20px;
+    /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+
+}
+.cont-addr{
+    font-size: 17px;
+    font-weight: 400;
+    text-align: center;
+    color: #000000ab;
+}
+.cs-img1{
+    width: 50px;
+    height: 50px;
+    margin-top: -10px;
+    margin-right: 15px;
+}
+.cs-img2{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 58px;
+    right: 61px;
+}
+
+@media screen and (max-width:960px) {
+    .header-logo{
+        height: 40px;
+        /* */
+    }
+    .header, .hero-section{
+        width: 90%;
+    }
+
+    .hero-desc{
+        width: 95%;
+    }
+
+    .marquee-section{
+        font-size: 70px;
+    }
+    .contract-section{
+        width: 89%;
+        padding: 80px 10px 120px;
+    }
+    .Heading{
+        font-size: 25px;
+    }
+    .cont-addr{
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .cs-img2{
+        width: 100px;
+        height: 100px;
+    }
+    .footer-sec{
+        padding: 10px!important;
+        width: 95%!important;
+        margin: auto!important;
+    }
+    .tkn-addr{
+        width: 90%;
+        margin: auto;
+        padding: 0 8px;
+    }
+    .token-input-ms{
+        width: 91%;
+    }
+    .csv-button{
+        margin-right: 5px;
+    }
+    .ms-sec{
+        padding-bottom: 40px;
+    }
+}
+
+.footer-sec{
+    color:rgb(0,0,0) ;
+    font-size: 14px;
+    padding: 15px 0 50px;
+    max-width: 1100px;
+    margin: auto;
+    width: 100%;
+    line-height: 26px;
+}
+.footer-span{
+    color: rgb(209, 114, 37) ;
+    font-size: 12px;
+}
+.ant-modal .ant-modal-content{
+    background-color: #e6dbca;
+}
+
+
+
+
+
+.ipt-box{
+    border: 0;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 4px;
+    offset: none;
+width: 300px;
+}
+.send-btn{
+    
+    background: #D17225;
+    border: 0;
+    padding: 10px;
+    border-radius: 4px;
+    margin: auto;
+    /* FONT-WEIGHT: 200; */
+    color: #fff;
+    font-size: 15px;
+}
