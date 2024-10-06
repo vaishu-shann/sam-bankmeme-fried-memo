@@ -24,14 +24,14 @@ import * as buffer from 'buffer';
 require('./App.css');
 require('@solana/wallet-adapter-react-ui/styles.css');
 
-const HomeCopy = () => {
+const Home = () => {
     return (
         <Context>
             <Content />
         </Context>
     );
 };
-export default HomeCopy;
+export default Home;
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
@@ -88,7 +88,7 @@ const Content: FC = () => {
         if (!provider) {
             return null;
         }
-        const connection = new Connection(clusterAPI, 'confirmed');
+        const connection = new Connection(clusterAPI);
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: wallet.publicKey,

@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import HomeCopy from './App';
+import Home from './App';
 
 
 ReactDOM.render(
     <React.StrictMode>
         <Router>
-            <HomeCopy />
+            <Home />
         </Router>
     </React.StrictMode>,
     document.getElementById('root')
